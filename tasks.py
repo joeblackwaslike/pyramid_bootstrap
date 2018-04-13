@@ -14,7 +14,7 @@ def install(ctx):
 @task
 def check(ctx):
     ctx.run('pyroma .')
-    ctx.run('pylint coinaddr')
+    ctx.run('pylint pyramid_bootstrap')
     ctx.run('pycodestyle')
 
 

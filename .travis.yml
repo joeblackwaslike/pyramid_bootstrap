@@ -7,29 +7,32 @@ notifications:
     on_success: never
     on_failure: always
 
+install: pip install -r requirements.txt
+
 before_script: pip install pytest
+
 script: pytest --cov tests
 
 before_deploy:
 - pip install m2r
 - python3 setup.py sdist bdist_wheel
 
-# deploy:
-# - provider: releases
-#   api_key:
-#     secure: SNWV9gc2/u+ZB7qoUytkmdMJ10i2OBkHwMOaSVicxuZm9wYyFwL7Fedc7/ROYvhrzSW4tCnLgpEfl4lXTHK2QMmJ4J8pCnskInTJy+fGFOZQQ4w1SEc0TrBSuQs5eKhXbNYy0zJ1cmZSz5adPCGp9AaahkDvTUCjMl29YtlXW7r6TmRckzE3vNrQ2pxNrbSdifRhoDYgrdWaLVjVEyoA0fqIQTDTIGp5HQU3ufO/7Alanhxpau3o2pmsr53JXLiNBrVtWwIxwOnS3wDungNiqvbSSfAY/ABqp7/to5WZ+I9GsGM87CkfVrG7RuOg2+9Sm+IwkpMOtEDviS8uT3+RYCfsFQwjGb4jURbUNyZp5dPPKMOgUB+OsQjpqfdoH7lLKRPnkzxxgCoo5CfFarf0XhjhAKSJnOPJi0h6ACu6Gn8JNbXs5XYn7VuwYVxe2v7GvmrodCsXl9KmwPheOMWzcXJWny7hFLF9oWSht2+MrTISMb78HgGZzUobIzWiSMD4QGorSshlS5KqtbU35xwN5PXn8bk5eRGgOZEW6BcbBrxcxx2vt9Lr7C8q3jhl+EBobL9QYtoKrA6c3gQvarKeibdPAuvhJXAc5LpVABzglWgiQOJnOw/UFT5zCQBHhYqc9bxJ+HuELB4vpMPPo6uDDd0av3RZnQFteq/olztUOkc=
-#   skip_cleanup: true
-#   file_glob: true
-#   file: dist/*
-#   on:
-#     repo: joeblackwaslike/base58check
-#     tags: true
-#   overwrite: true
-# - provider: pypi
-#   user: joeblackwaslike
-#   password:
-#     secure: "XCcs6tTmE+eMGHwhEiaybgboxBHofg4islARn8Fhq29G4m/WEoWmDgVn54q3LjXMngxeWcso3WL/xJ3WVYSw1FjphSbWIv0LdU9qe1K0nqAI9Ifr6SWsZKCn5SYe22aokn/6axOZJPwjWeOAMfqFWY9hOCGGlAqiYbu4VPD89cmOl6PE3wbuhoM9YLldUlooEef5lEX+FhybXydQ9eupip1VouY+rM56eh61O8l3StejAGBBdI1hfqDy+PD045Olaid07RWZZSINn654zK9ny1TkOm0Q3Ugz2tJrSelt3iJzX309ENDA8OzDln5dYTCacq4AU8IGT6t47+epNogB447W99Yz/yR4nVfHlujwTdEf86DpfPl8kZQK4qWrGygREL942nOL9i9MwugLDbhykkYxtIVGWvGiDYQK8nmy2+pTVqTnl+8ViP7AEHTGZgoYwNaluOdsGqq8Gy6egIGO13q+XCkKV5kRXZzGnEmzTX5W69z6EJ+wAbfmxWRTA3NYifiuQzX1h2rkRVs1AKuG+F1uSymQGm4hOuxmFULJN5LMMANnnrHFf7HGSR6Olpzb1YmLaBO9TM2PjQYq6BecR63W2HxP+gFRAeP7d1Cm/NhMX+xfJGrSofjSdiH2mGZdh9ElCOVgWw78h12ZimwoFWQxkinqU+5ILD7dmVbvtKc="
-#   on:
-#     tags: true
-#   skip_cleanup: true
-#   distributions: "sdist bdist_wheel"
+deploy:
+- provider: releases
+  api_key:
+    secure: CSYrm0aumR95Yr5LfRF+oa4hgjjPq8cg7vWfEWAqrNcmxllpp4g+cXiCndgkGOhYsHztphvMjzfSMOyZVlx6SsWfPjIOU3+5jBmqqaUIEzV78F1c0o4hFsdIgZvSb8Iy7E+qUwpKk8zHL4RtF5avUAk31VucR5K1Zzurd1OATdDKW4F4JXtnuHmQ4bFBkMRqAmCeKWP2E61QX8WTb6s2N3LTiJi5AZneJq+Hj8OisLn17h+34m9BDLu8SGuD3+7uuuZOUt0y7B5DjVA7q2wtGYtF3VRTMn0gGJNFswhlarNDeVkFWyLTaWaU3/mA0w6qODm1+R5QOjaOwZTVILnrzKdcpna0glR7DM1y3JJRnVl/tUDTKPHC3cAG1aAK4Vjy83JKQWCbvVeNmPfhNqYKudrudfGJiPO0RJP9LFTVTbonofSFhx+QBkrw6K3FNeeLnoPlGaycvS/xPlfMSQdz8C6HUNmDRXWg3wvC3iq7p2RF5sn6wjcjbgfcgxdOfwUa/K5d2TDQKrWjrpwYQctHRgqU1rammsIaKdhnyWc0GIExIeE8oqeG91GB08OIqAe+8/aq4b69XekXTx6qLVz1evUHdzTddY5i8ZYu7KjzUgSxk7mlscu/P2M8c1oScWG0Pe0Nqk5u9rZv4eLXYLxu4jINIMvrGtt6AHD2TiRJdng=
+  skip_cleanup: true
+  file_glob: true
+  file: dist/*
+  on:
+    repo: joeblackwaslike/pyramid_bootstrap
+    tags: true
+  overwrite: true
+- provider: pypi
+  user: joeblackwaslike
+  password:
+    secure: "mJu1EH5wUg/WbxPp7tWy6PlNKMHaPFT1OCug0znoS4B1G+B3bxt4Zm5aDPGkTenZgcg9R//JHNnfqfRGDTDLyqx2vramSdxlvWfNFMYGsSW+/wGynk+hnoalerYm1msLpOP+8FWOwE3GeXKsQnG6R7NGfZf39y8PPnmjQwvdQm45uBUuDdtEX7SpbXP52IigZzFCRekN/2LG8DA1BMc653+bMNF7077DI9eqWw3PcfTpr2uqjui4ikZPabL8J/OOEgqOl90zhB2vVerYaaUBHFPe2/XrSHEHgN2aiXI1gVPRU3U9kW5nxtNLutZa5In051nycHG4v9x/sLjVaOxwDaFFbdttefyEtiy2UXt3o1unaL8qRPXeWA/iU3qserFSJyjYYFc13hNOT/MEmOKHaPQLC4OqVkJIeY+1SqJypMkx31I8/KFdDzxwQHr3qEvgVyWchlO+B6gJIn5Y3krEsmwvNe/KcWWdIOZO6f5PYiYS4TFU0uVy768Jy/022HgeoqjqgXILHH7b3phD715MmnpBX8MCNojXvL0nfPLPDmBqjnwNR5Xvghs0fjJOQ80t/8x0Fmk7Gpp/KFa48sw68n78oufwLRhvBWzJLHMJrTo/6V5Y/morVJ/67tJZgvPtNSx7ZJkev3p4bVGOYC1fhSBc3ALoePCrP+XP2zN6nPQ="
+  on:
+    tags: true
+  skip_cleanup: true
+  distributions: "sdist bdist_wheel"

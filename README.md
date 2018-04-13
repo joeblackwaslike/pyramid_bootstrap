@@ -20,7 +20,6 @@ pip3 install pyramid_bootstrap4
 ```
 
 
-
 ## Usage
 
 ### App Factory Config
