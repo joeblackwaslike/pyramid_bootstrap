@@ -1,5 +1,5 @@
-# pyramid_bootstrap4
-[![Build Status](https://travis-ci.org/joeblackwaslike/pyramid_bootstrap4.svg?branch=master)](https://travis-ci.org/joeblackwaslike/pyramid_bootstrap4) [![Github Repo](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/joeblackwaslike/pyramid_bootstrap4) [![Pypi Version](https://img.shields.io/pypi/v/pyramid_bootstrap4.svg)](https://pypi.python.org/pypi/pyramid_bootstrap4) [![Pypi License](https://img.shields.io/pypi/l/pyramid_bootstrap4.svg)](https://pypi.python.org/pypi/pyramid_bootstrap4) [![Pypi Wheel](https://img.shields.io/pypi/wheel/pyramid_bootstrap4.svg)](https://pypi.python.org/pypi/pyramid_bootstrap4) [![Pypi Versions](https://img.shields.io/pypi/pyversions/pyramid_bootstrap4.svg)](https://pypi.python.org/pypi/pyramid_bootstrap4)
+# pyramid_bootstrap
+[![Build Status](https://travis-ci.org/joeblackwaslike/pyramid_bootstrap.svg?branch=master)](https://travis-ci.org/joeblackwaslike/pyramid_bootstrap) [![Github Repo](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/joeblackwaslike/pyramid_bootstrap) [![Pypi Version](https://img.shields.io/pypi/v/pyramid_bootstrap.svg)](https://pypi.python.org/pypi/pyramid_bootstrap) [![Pypi License](https://img.shields.io/pypi/l/pyramid_bootstrap.svg)](https://pypi.python.org/pypi/pyramid_bootstrap) [![Pypi Wheel](https://img.shields.io/pypi/wheel/pyramid_bootstrap.svg)](https://pypi.python.org/pypi/pyramid_bootstrap) [![Pypi Versions](https://img.shields.io/pypi/pyversions/pyramid_bootstrap.svg)](https://pypi.python.org/pypi/pyramid_bootstrap)
 
 
 ## Maintainer
@@ -16,7 +16,7 @@ Also includes master layout template for jinja2 and chameleon template languages
 
 ## Installation
 ```shell
-pip3 install pyramid_bootstrap4
+pip3 install pyramid_bootstrap
 ```
 
 

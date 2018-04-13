@@ -17,7 +17,7 @@ except ImportError:
         long_description = fd.read()
 
 setup(
-    name='pyramid_bootstrap4',
+    name='pyramid_bootstrap',
     version=version,
     description='Bootstrap 4.0 for Pyramid',
     long_description=long_description,
