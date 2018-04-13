@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title metal:define-slot="title"
+          tal:content="context/title | python:None"> Title goes here </title>
+    <link href="${bs4_resource('twitter-bootstrap').static_path('css/bootstrap.css')}" rel="stylesheet">
+    <link href="${bs4_resource('font-awesome').static_path('css/font-awesome.css')}" rel="stylesheet">
+
+    <metal:slot metal:define-slot="styles" />
+  </head>
+  <body>
+      <metal:slot metal:define-slot="navbar" />
+      <metal:slot metal:define-slot="breadcrumbs" />
+
+      <section id="content">
+        <metal:slot metal:define-slot="content" />
+      </section>
+
+      <script src="${bs4_resource('jquery').static_path('jquery.js')}"></script>
+      <script src="${bs4_resource('popper.js').static_path('umd/popper.js')}"></script>
+      <script src="${bs4_resource('twitter-bootstrap').static_path('js/bootstrap.js')}"></script>
+
+      <metal:slot metal:define-slot="scripts" />
+
+  </body>
+</html>

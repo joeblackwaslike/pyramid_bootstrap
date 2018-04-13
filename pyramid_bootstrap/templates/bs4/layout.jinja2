@@ -1,0 +1,37 @@
+{% block doc -%}
+<!DOCTYPE html>
+<html{% block html_attribs %}{% endblock html_attribs %}>
+{%- block html %}
+  <head>
+    {%- block metas %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {%- endblock metas %}
+
+    {%- block head %}
+    <title>{% block title %}{{ title|default }}{% endblock title %}</title>
+
+    {%- block styles %}
+    <link href="{{ bs4_resource('twitter-bootstrap').static_path('css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ bs4_resource('font-awesome').static_path('css/font-awesome.css') }}" rel="stylesheet">
+    {% endblock styles %}
+    {%- endblock head %}
+  </head>
+  <body{% block body_attribs %}{% endblock body_attribs %}>
+    {% block body -%}
+    {% block navbar %}
+    {%- endblock navbar %}
+    {% block content -%}
+    {%- endblock content %}
+
+    {% block scripts %}
+    <script src="{{ bs4_resource('jquery').static_path('jquery.js') }}"></script>
+    <script src="{{ bs4_resource('popper.js').static_path('umd/popper.js') }}"></script>
+    <script src="{{ bs4_resource('twitter-bootstrap').static_path('js/bootstrap.js') }}"></script>
+    {%- endblock scripts %}
+    {%- endblock body %}
+  </body>
+{%- endblock html %}
+</html>
+{% endblock doc -%}

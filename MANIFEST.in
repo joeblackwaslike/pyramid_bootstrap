@@ -1,0 +1,3 @@
+include LICENSE README.md
+recursive-include pyramid_bootstrap *.ico *.png *.css *.gif *.jpg *.pt *.txt *.mak *.mako *.jinja2 *.eot *.svg *.ttf *.woff *woff2 *otf *.js *.map *.html *.xml
+recursive-include tests *.py
